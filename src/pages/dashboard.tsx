@@ -8,6 +8,7 @@ import TopCard from '../components/top-card'
 import Menu from '../layouts/menu'
 import RecentMessagesCard from '../components/rencent-messages-card'
 import CurrentUserCard from '../components/current-user-card'
+import ProfileVisitsCard from '../components/profile-visits-card'
 
 const Grid = styled.div`
   display: grid;
@@ -16,7 +17,11 @@ const Grid = styled.div`
   grid-column-gap: 16px;
 `
 
-const Container = styled.div``
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
 
 const TopCardArea = styled.div`
   display: flex;
@@ -60,6 +65,7 @@ const Dashboard = () => {
               color="#EF7576"
             />
           </TopCardArea>
+          <ProfileVisitsCard />
         </Container>
         <RightSide>
           <CurrentUserCard />
