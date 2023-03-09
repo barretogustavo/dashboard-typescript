@@ -6,6 +6,7 @@ const Row = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 0.2rem;
+  cursor: pointer;
 `
 
 const Column = styled.div`
@@ -33,11 +34,16 @@ type Props = {
   img: string
   user: string
   username: string
+  onClick?(
+    e:
+      | React.KeyboardEvent<HTMLDivElement>
+      | React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ): void
 }
 
-const UserCard = ({ img, user, username }: Props) => {
+const UserCard = ({ img, user, username, onClick }: Props) => {
   return (
-    <Row>
+    <Row onClick={onClick}>
       <Avatar src={img} alt="Imagem do usuário" />
       <Column>
         <Name>{user}</Name>
@@ -45,6 +51,10 @@ const UserCard = ({ img, user, username }: Props) => {
       </Column>
     </Row>
   )
+}
+
+UserCard.defaultProps = {
+  onClick: () => null,
 }
 
 export default UserCard

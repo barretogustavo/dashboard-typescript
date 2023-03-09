@@ -4,6 +4,7 @@ import UserCard from './user-card'
 import avatar1 from '../assets/avatar/avatar1.jpg'
 import avatar2 from '../assets/avatar/avatar2.jpg'
 import avatar3 from '../assets/avatar/avatar3.jpg'
+import { Data } from '../types'
 
 const Card = styled.div`
   height: 100px;
@@ -16,13 +17,17 @@ const Card = styled.div`
   padding: 1.5rem 15px;
 `
 
-const CurrentUserCard = () => {
+type Props = {
+  currentUserData: Data
+}
+
+const CurrentUserCard = ({ currentUserData }: Props) => {
   return (
     <Card>
       <UserCard
         img={avatar1}
-        user="Gustavo Barreto"
-        username="@gustavobarreto.dev"
+        user={currentUserData.name}
+        username={currentUserData.username}
       />
     </Card>
   )

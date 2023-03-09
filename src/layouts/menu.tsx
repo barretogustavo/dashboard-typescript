@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { BsGridFill, BsFillChatLeftDotsFill } from 'react-icons/bs'
 import { FaChartArea, FaThList } from 'react-icons/fa'
 import { RiChatHistoryFill } from 'react-icons/ri'
@@ -98,6 +98,7 @@ type Props = {
 }
 
 const Menu = ({ children }: Props) => {
+  const { pathname } = useLocation()
   const navigate = useNavigate()
 
   return (
@@ -107,7 +108,10 @@ const Menu = ({ children }: Props) => {
           <h2>SocialDash</h2>
         </LogoArea>
         <nav>
-          <LabelLink isActive onClick={() => navigate('/dashboard')}>
+          <LabelLink
+            isActive={pathname === '/dashboard'}
+            onClick={() => navigate('/dashboard')}
+          >
             <BsGridFill />
             Dashboard
           </LabelLink>
@@ -119,7 +123,10 @@ const Menu = ({ children }: Props) => {
             <FaThList />
             Perfis
           </LabelLink>
-          <LabelLink onClick={() => navigate('/chat')}>
+          <LabelLink
+            isActive={pathname === '/chat'}
+            onClick={() => navigate('/chat')}
+          >
             <BsFillChatLeftDotsFill />
             Chat
           </LabelLink>

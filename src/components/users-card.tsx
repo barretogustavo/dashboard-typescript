@@ -5,6 +5,7 @@ import UserCard from './user-card'
 import avatar1 from '../assets/avatar/avatar1.jpg'
 import avatar2 from '../assets/avatar/avatar2.jpg'
 import avatar3 from '../assets/avatar/avatar3.jpg'
+import { Data } from '../types'
 
 const Card = styled.div`
   width: 100%;
@@ -35,18 +36,28 @@ const Button = styled.button`
   cursor: pointer;
 `
 
-const RecentMessagesCard = () => {
+type Props = {
+  usersData: Data[]
+  setCurrentUserId: React.Dispatch<React.SetStateAction<number>>
+}
+
+const UsersCard = ({ usersData, setCurrentUserId }: Props) => {
   const navigate = useNavigate()
 
   return (
     <Card>
-      <Title>Mensagens recentes</Title>
-      <UserCard img={avatar1} user="João Silva" username="@joãosilva" />
-      <UserCard img={avatar2} user="Pedro Pedreira" username="@pedropedreira" />
-      <UserCard img={avatar3} user="Michael Souza" username="@michaelsouza" />
+      <Title>Usuários</Title>
+      {usersData.map((item) => (
+        <UserCard
+          onClick={() => setCurrentUserId(item.id)}
+          img={avatar1}
+          user={item.name}
+          username={item.username}
+        />
+      ))}
       <Button onClick={() => navigate('/chat')}>Iniciar Conversa</Button>
     </Card>
   )
 }
 
-export default RecentMessagesCard
+export default UsersCard

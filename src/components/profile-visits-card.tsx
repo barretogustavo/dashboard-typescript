@@ -1,13 +1,11 @@
+import { BarDatum } from '@nivo/bar'
 import React from 'react'
 import styled from 'styled-components'
-import { chartData } from '../mocks'
 import ChartBar from './chart-bar'
-
-const Card = styled.div``
 
 const ProfileVisitArea = styled.div`
   width: 100%;
-  height: 400px;
+  height: 500px;
   background-color: #fefefe;
   border-radius: 1rem;
   display: flex;
@@ -21,14 +19,16 @@ const Title = styled.h3`
   margin-bottom: 2rem;
 `
 
-const ProfileVisitsCard = () => {
+type Props = {
+  data: BarDatum[]
+}
+
+const ProfileVisitsCard = ({ data }: Props) => {
   return (
-    <Card>
-      <ProfileVisitArea>
-        <Title>Visitas ao perfil</Title>
-        <ChartBar data={chartData} />
-      </ProfileVisitArea>
-    </Card>
+    <ProfileVisitArea>
+      <Title>Visitas ao perfil</Title>
+      <ChartBar data={data} />
+    </ProfileVisitArea>
   )
 }
 
