@@ -11,7 +11,9 @@ import Menu from '../layouts/menu'
 import UsersCard from '../components/users-card'
 import CurrentUserCard from '../components/current-user-card'
 import ProfileVisitsCard from '../components/profile-visits-card'
-import { Data } from '../types'
+import { AgeRangeData, Data, StateData } from '../types'
+import MainStatesCard from '../components/main-states-card'
+import AgeRangeCard from '../components/age-range-card'
 
 const Grid = styled.div`
   display: grid;
@@ -37,9 +39,16 @@ const RightSide = styled.div`
   gap: 1rem;
 `
 
+const Row = styled.div`
+  display: flex;
+  gap: 1rem;
+`
+
 const Dashboard = () => {
   const [currentUserId, setCurrentUserId] = useState(1)
   const [data, setData] = useState<Data>()
+  const [statesData, setStateData] = useState<StateData>()
+  const [ageRangeData, setAgeRangeData] = useState<AgeRangeData>()
   const [users, setUsers] = useState<Data[]>()
 
   useEffect(() => {
@@ -49,13 +58,17 @@ const Dashboard = () => {
   }, [])
 
   useEffect(() => {
-    const url = `http://localhost:5000/users/${currentUserId}?_embed=profileVisits`
+    const profileVisitsUrl = `http://localhost:5000/users/${currentUserId}?_embed=profileVisits`
+    const mainStateUrl = `http://localhost:5000/users/${currentUserId}?_embed=mainStates`
+    const ageRange = `http://localhost:5000/users/${currentUserId}?_embed=ageRange`
 
-    axios.get(url).then((response) => setData(response.data))
+    axios.get(profileVisitsUrl).then((response) => setData(response.data))
+    axios.get(mainStateUrl).then((response) => setStateData(response.data))
+    axios.get(ageRange).then((response) => setAgeRangeData(response.data))
   }, [currentUserId])
 
-  if (!data || !users) {
-    return <p>você precisa iniciar a fake api</p>
+  if (!data || !users || !statesData || !ageRangeData) {
+    return <p>Loading...</p>
   }
 
   return (
@@ -89,6 +102,10 @@ const Dashboard = () => {
             />
           </TopCardArea>
           <ProfileVisitsCard data={data.profileVisits[0].visits} />
+          <Row>
+            <MainStatesCard data={statesData.mainStates[0].state} />
+            <AgeRangeCard data={ageRangeData.ageRange[0].range} />
+          </Row>
         </Container>
         <RightSide>
           <CurrentUserCard currentUserData={data} />

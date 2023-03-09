@@ -117,5 +117,137 @@
         }
       ]
     }
+  ],
+
+  "mainStates": [
+    {
+      "userId": 1,
+      "state": [
+        {
+          "name": "São Paulo",
+          "percent": 12
+        },
+        {
+          "name": "Rio de Janeiro",
+          "percent": 8
+        },
+        {
+          "name": "Ceará",
+          "percent": 4
+        },
+        {
+          "name": "Rio Grande do Sul",
+          "percent": 2
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "state": [
+        {
+          "name": "São Paulo",
+          "percent": 24
+        },
+        {
+          "name": "Rio de Janeiro",
+          "percent": 12
+        },
+        {
+          "name": "Ceará",
+          "percent": 7
+        },
+        {
+          "name": "Rio Grande do Sul",
+          "percent": 8
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "state": [
+        {
+          "name": "São Paulo",
+          "percent": 20
+        },
+        {
+          "name": "Rio de Janeiro",
+          "percent": 30
+        },
+        {
+          "name": "Ceará",
+          "percent": 40
+        },
+        {
+          "name": "Rio Grande do Sul",
+          "percent": 10
+        }
+      ]
+    }
+  ],
+
+  "ageRange": [
+    {
+      "userId": 1,
+      "range": [
+        {
+          "age": "18 a 24",
+          "percent": 42
+        },
+        {
+          "age": "25 a 34",
+          "percent": 39.9
+        },
+        {
+          "age": "35 a 44",
+          "percent": 10.4
+        },
+        {
+          "age": "13 a 17",
+          "percent": 4.2
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "range": [
+        {
+          "age": "18 a 24",
+          "percent": 41
+        },
+        {
+          "age": "25 a 34",
+          "percent": 38
+        },
+        {
+          "age": "35 a 44",
+          "percent": 15.4
+        },
+        {
+          "age": "13 a 17",
+          "percent": 5.9
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "range": [
+        {
+          "age": "18 a 24",
+          "percent": 20
+        },
+        {
+          "age": "25 a 34",
+          "percent": 60
+        },
+        {
+          "age": "35 a 44",
+          "percent": 13
+        },
+        {
+          "age": "13 a 17",
+          "percent": 2.1
+        }
+      ]
+    }
   ]
 }
