@@ -55,7 +55,7 @@ const Dashboard = () => {
   }, [currentUserId])
 
   if (!data || !users) {
-    return null
+    return <p>você precisa iniciar a fake api</p>
   }
 
   return (
