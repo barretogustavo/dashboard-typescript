@@ -5,7 +5,6 @@ import { BsFillPersonFill } from 'react-icons/bs'
 import { MdPersonAddAlt1 } from 'react-icons/md'
 import { RiFlag2Line } from 'react-icons/ri'
 import axios from 'axios'
-import { BarDatum } from '@nivo/bar'
 import TopCard from '../components/top-card'
 import Menu from '../layouts/menu'
 import UsersCard from '../components/users-card'
@@ -20,6 +19,12 @@ const Grid = styled.div`
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
+`
+
+const Title = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: rgb(69 75 120);
 `
 
 const Container = styled.div`
@@ -73,6 +78,7 @@ const Dashboard = () => {
 
   return (
     <Menu>
+      <Title>Dashboard</Title>
       <Grid>
         <Container>
           <TopCardArea>

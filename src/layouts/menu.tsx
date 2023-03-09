@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { BsGridFill, BsFillChatLeftDotsFill } from 'react-icons/bs'
-import { FaChartArea, FaThList } from 'react-icons/fa'
+import { FaChartArea, FaThList, FaShareAlt } from 'react-icons/fa'
 import { RiChatHistoryFill } from 'react-icons/ri'
 import { CgProfile } from 'react-icons/cg'
 
@@ -51,10 +51,10 @@ const LogoArea = styled.section`
   align-items: center;
   gap: 10px;
   margin-bottom: 0.1875rem;
+  color: #435ebe;
 
   & > h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #435ebe;
   }
 `
 
@@ -105,6 +105,7 @@ const Menu = ({ children }: Props) => {
     <Container>
       <Aside>
         <LogoArea>
+          <FaShareAlt />
           <h2>SocialDash</h2>
         </LogoArea>
         <nav>
