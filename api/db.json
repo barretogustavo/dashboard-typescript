@@ -1,0 +1,121 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gustavo Barreto",
+      "username": "@gustavobarreto.dev",
+      "totalVisits": 112000,
+      "followers": 183000,
+      "following": 1200,
+      "savedPosts": 122
+    },
+    {
+      "id": 2,
+      "name": "João Silva",
+      "username": "@joaosilva",
+      "totalVisits": 90000,
+      "followers": 87000,
+      "following": 300,
+      "savedPosts": 604
+    },
+    {
+      "id": 3,
+      "name": "Pedro Pedrosa",
+      "username": "@pedro.pedrosa",
+      "totalVisits": 300000,
+      "followers": 20000,
+      "following": 127,
+      "savedPosts": 390
+    }
+  ],
+
+  "profileVisits": [
+    {
+      "userId": 1,
+      "visits": [
+        {
+          "month": "1",
+          "visits": 90000
+        },
+        {
+          "month": "2",
+          "visits": 60000
+        },
+        {
+          "month": "3",
+          "visits": 93000
+        },
+        {
+          "month": "4",
+          "visits": 90000
+        },
+        {
+          "month": "5",
+          "visits": 80000
+        },
+        {
+          "month": "6",
+          "visits": 93000
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "visits": [
+        {
+          "month": "1",
+          "visits": 20000
+        },
+        {
+          "month": "2",
+          "visits": 30000
+        },
+        {
+          "month": "3",
+          "visits": 13000
+        },
+        {
+          "month": "4",
+          "visits": 15000
+        },
+        {
+          "month": "5",
+          "visits": 8000
+        },
+        {
+          "month": "6",
+          "visits": 17000
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "visits": [
+        {
+          "month": "1",
+          "visits": 8000
+        },
+        {
+          "month": "2",
+          "visits": 9000
+        },
+        {
+          "month": "3",
+          "visits": 13000
+        },
+        {
+          "month": "4",
+          "visits": 5000
+        },
+        {
+          "month": "5",
+          "visits": 15000
+        },
+        {
+          "month": "6",
+          "visits": 20000
+        }
+      ]
+    }
+  ]
+}
