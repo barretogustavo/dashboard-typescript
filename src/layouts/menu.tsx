@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { BsGridFill, BsFillChatLeftDotsFill } from 'react-icons/bs'
+import { BsGridFill, BsFillPeopleFill } from 'react-icons/bs'
 import { FaChartArea, FaThList, FaShareAlt } from 'react-icons/fa'
 import { RiChatHistoryFill } from 'react-icons/ri'
 import { CgProfile } from 'react-icons/cg'
@@ -116,31 +116,31 @@ const Menu = ({ children }: Props) => {
             <BsGridFill />
             Dashboard
           </LabelLink>
-          <LabelLink>
+          {/* <LabelLink>
             <FaChartArea />
             Estatísticas
-          </LabelLink>
-          <LabelLink>
+          </LabelLink> */}
+          {/* <LabelLink>
             <FaThList />
             Perfis
-          </LabelLink>
+          </LabelLink> */}
           <LabelLink
-            isActive={pathname === '/chat'}
-            onClick={() => navigate('/chat')}
+            isActive={pathname === '/employee'}
+            onClick={() => navigate('/employee')}
           >
-            <BsFillChatLeftDotsFill />
-            Chat
+            <BsFillPeopleFill />
+            Funcionários
           </LabelLink>
-          <LabelLink>
+          {/* <LabelLink>
             <RiChatHistoryFill />
             Histórico
-          </LabelLink>
+          </LabelLink> */}
         </nav>
       </Aside>
       <section>
         <Header>
           <ProfileArea>
-            <p>Gustavo Barreto</p>
+            {/* <p>Nome do perfil logado</p> */}
             <CgProfile />
           </ProfileArea>
         </Header>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Chat from './chat'
 import Dashboard from './dashboard'
+import Employee from './employee'
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: '/chat',
-    element: <Chat />,
+    path: '/employee',
+    element: <Employee />,
   },
 ])
