@@ -5,14 +5,13 @@ import { BsFillPersonFill } from 'react-icons/bs'
 import { MdPersonAddAlt1 } from 'react-icons/md'
 import { RiFlag2Line } from 'react-icons/ri'
 import axios from 'axios'
-import TopCard from '../components/top-card'
-import Menu from '../layouts/menu'
-import UsersCard from '../components/users-card'
-import CurrentUserCard from '../components/current-user-card'
-import ProfileVisitsCard from '../components/profile-visits-card'
-import { AgeRangeData, Data, StateData } from '../types'
-import MainStatesCard from '../components/main-states-card'
-import AgeRangeCard from '../components/age-range-card'
+import { AgeRangeData, Data, StateData } from '../../types'
+import Menu from '../../layouts/menu'
+import TopCard from '../../components/top-card'
+import ProfileVisitsCard from '../../components/profile-visits-card'
+import MainStatesCard from '../../components/main-states-card'
+import AgeRangeCard from '../../components/age-range-card'
+import UsersCard from '../../components/users-card'
 
 const Grid = styled.div`
   display: grid;
@@ -62,19 +61,19 @@ const Dashboard = () => {
     axios.get(url).then((response) => setUsers(response.data))
   }, [])
 
-  useEffect(() => {
-    const profileVisitsUrl = `http://localhost:5000/users/${currentUserId}?_embed=profileVisits`
-    const mainStateUrl = `http://localhost:5000/users/${currentUserId}?_embed=mainStates`
-    const ageRange = `http://localhost:5000/users/${currentUserId}?_embed=ageRange`
+  // useEffect(() => {
+  //   const profileVisitsUrl = `http://localhost:5000/users/${currentUserId}?_embed=profileVisits`
+  //   const mainStateUrl = `http://localhost:5000/users/${currentUserId}?_embed=mainStates`
+  //   const ageRange = `http://localhost:5000/users/${currentUserId}?_embed=ageRange`
 
-    axios.get(profileVisitsUrl).then((response) => setData(response.data))
-    axios.get(mainStateUrl).then((response) => setStateData(response.data))
-    axios.get(ageRange).then((response) => setAgeRangeData(response.data))
-  }, [currentUserId])
+  //   axios.get(profileVisitsUrl).then((response) => setData(response.data))
+  //   axios.get(mainStateUrl).then((response) => setStateData(response.data))
+  //   axios.get(ageRange).then((response) => setAgeRangeData(response.data))
+  // }, [currentUserId])
 
-  if (!data || !users || !statesData || !ageRangeData) {
-    return <p>Loading...</p>
-  }
+  // if (!data || !users || !statesData || !ageRangeData) {
+  //   return <p>Loading...</p>
+  // }
 
   return (
     <Menu>
@@ -84,38 +83,38 @@ const Dashboard = () => {
           <TopCardArea>
             <TopCard
               label="Visitas"
-              data={data.totalVisits}
+              data={1}
               icon={<AiFillEye />}
               color="#9694FE"
             />
             <TopCard
               label="Seguidores"
-              data={data.followers}
+              data={1}
               icon={<BsFillPersonFill />}
               color="#54C6E8"
             />
             <TopCard
               label="Seguindo"
-              data={data.following}
+              data={1}
               icon={<MdPersonAddAlt1 />}
               color="#69DAB4"
             />
             <TopCard
               label="Posts Salvos"
-              data={data.savedPosts}
+              data={1}
               icon={<RiFlag2Line />}
               color="#EF7576"
             />
           </TopCardArea>
-          <ProfileVisitsCard data={data.profileVisits[0].visits} />
+          <ProfileVisitsCard data={[]} />
           <Row>
-            <MainStatesCard data={statesData.mainStates[0].state} />
-            <AgeRangeCard data={ageRangeData.ageRange[0].range} />
+            <MainStatesCard data={[]} />
+            <AgeRangeCard data={[]} />
           </Row>
         </Container>
         <RightSide>
-          <CurrentUserCard currentUserData={data} />
-          <UsersCard usersData={users} setCurrentUserId={setCurrentUserId} />
+          {/* <CurrentUserCard currentUserData={[{}]} /> */}
+          <UsersCard usersData={[]} setCurrentUserId={setCurrentUserId} />
         </RightSide>
       </Grid>
     </Menu>
