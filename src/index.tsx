@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { GlobalStyle } from './styles/global-style'
+import { CurrentThemeProvider } from './context/theme-context'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <App />
-  </React.StrictMode>,
-)
+
+const AppContainer = () => {
+  return (
+    <React.StrictMode>
+      <CurrentThemeProvider>
+        <App />
+      </CurrentThemeProvider>
+    </React.StrictMode>
+  )
+}
+
+root.render(<AppContainer />)

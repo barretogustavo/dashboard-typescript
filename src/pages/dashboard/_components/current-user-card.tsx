@@ -4,7 +4,7 @@ import UserCard from './user-card'
 import avatar1 from '../assets/avatar/avatar1.jpg'
 import avatar2 from '../assets/avatar/avatar2.jpg'
 import avatar3 from '../assets/avatar/avatar3.jpg'
-import { Data } from '../types'
+import { Data } from '../../../types'
 
 const Card = styled.div`
   height: 100px;

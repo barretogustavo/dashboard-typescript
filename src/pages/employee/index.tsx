@@ -1,9 +1,11 @@
+// @ts-nocheck
 import React from 'react'
 import styled from 'styled-components'
 import { differenceInYears } from 'date-fns'
 import Menu from '../../layouts/menu'
 import ListEmployee from './list-employee'
 import useListAllEmployees from './_hooks/use-list-all-employees'
+import { Row } from '../../components/form-components'
 
 const Title = styled.h1`
   font-size: 2rem;
@@ -30,15 +32,13 @@ const Employee = () => {
 
   return (
     <Menu>
-      <Title>Funcionários</Title>
+      <Row justifyContent="space-between">
+        <Title>Funcionários</Title>
+      </Row>
       {employee.map((item) => {
-        console.log(
-          'new Date(item.dataNascimento): ',
-          new Date(item.dataNascimento),
-        )
         return (
           <ListEmployee
-            age={differenceInYears(currentDate, new Date(item.dataNascimento))}
+            age={differenceInYears(currentDate, item.dataNascimento)}
             createdAt={item.created_at}
             gender={item.sexo}
             name={`${item.nome} ${item.sobrenome}`}

@@ -7,11 +7,11 @@ import { RiFlag2Line } from 'react-icons/ri'
 import axios from 'axios'
 import { AgeRangeData, Data, StateData } from '../../types'
 import Menu from '../../layouts/menu'
-import TopCard from '../../components/top-card'
-import ProfileVisitsCard from '../../components/profile-visits-card'
-import MainStatesCard from '../../components/main-states-card'
-import AgeRangeCard from '../../components/age-range-card'
-import UsersCard from '../../components/users-card'
+import AgeRangeCard from './_components/age-range-card'
+import TopCard from './_components/top-card'
+import ProfileVisitsCard from './_components/profile-visits-card'
+import MainStatesCard from './_components/main-states-card'
+import UsersCard from './_components/users-card'
 
 const Grid = styled.div`
   display: grid;
